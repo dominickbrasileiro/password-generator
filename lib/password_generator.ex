@@ -55,7 +55,7 @@ defmodule PasswordGenerator do
 
   defp add_charset(currentCharset, options, key, newCharset) do
     cond do
-      Map.has_key?(options, key) -> currentCharset ++ newCharset
+      Map.has_key?(options, key) && options[key] -> currentCharset ++ newCharset
       true -> currentCharset
     end
   end
